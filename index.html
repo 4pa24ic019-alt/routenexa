@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Routenexa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login">
+    <div class="login-art">
+      <div class="login-copy">
+        <h1>Routenexa</h1>
+        <p>Multiple small loads. One truck already heading your way.</p>
+      </div>
+      <svg viewBox="0 0 600 300" class="scene" role="img" aria-label="A truck driving along a country road at sunrise">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#123d2d"/><stop offset="1" stop-color="#2f7d5c"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="300" fill="url(#sky)"/>
+        <circle cx="470" cy="120" r="46" fill="#f2a24a"/>
+        <path d="M0 210 Q90 140 190 200 T380 190 T600 205 V300 H0Z" fill="#2f7d5c"/>
+        <path d="M0 235 Q120 180 250 228 T600 230 V300 H0Z" fill="#1f5a43"/>
+        <rect y="250" width="600" height="50" fill="#0d2a20"/>
+        <line x1="0" y1="276" x2="600" y2="276" stroke="#f2a24a" stroke-width="3" stroke-dasharray="22 16"/>
+        <g class="truck-g">
+          <rect x="190" y="196" width="130" height="54" rx="6" fill="#f4f7f4"/>
+          <rect x="204" y="176" width="28" height="22" rx="3" fill="#e58a1f"/>
+          <rect x="238" y="178" width="26" height="20" rx="3" fill="#c0392b"/>
+          <rect x="270" y="180" width="30" height="18" rx="3" fill="#7bb661"/>
+          <rect x="320" y="206" width="52" height="44" rx="6" fill="#f2a24a"/>
+          <rect x="346" y="213" width="20" height="16" rx="3" fill="#cfe5d8"/>
+          <circle cx="222" cy="252" r="14" fill="#10201a"/><circle cx="222" cy="252" r="6" fill="#cfe5d8"/>
+          <circle cx="342" cy="252" r="14" fill="#10201a"/><circle cx="342" cy="252" r="6" fill="#cfe5d8"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="login-card">
+      <div class="login-box">
+        <h2>Welcome back</h2>
+        <p class="note">Demo login. Nothing is stored or verified.</p>
+        <label for="l-name">Your name</label>
+        <input id="l-name" placeholder="e.g. Ravi">
+        <label for="l-phone">Phone number</label>
+        <input id="l-phone" placeholder="e.g. 98450 00000">
+        <label for="l-role">I am a</label>
+        <select id="l-role">
+          <option>Seller</option>
+          <option>Driver</option>
+        </select>
+        <button class="btn full" onclick="login()">Enter demo</button>
+        <p id="l-error" class="no"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <div id="app" class="shell" style="display:none">
+    <aside class="side">
+      <div class="brand">Routenexa</div>
+      <nav>
+        <button onclick="showScreen(1)">📋 Booking</button>
+        <button onclick="showScreen(2)">🚛 Driver</button>
+        <button onclick="showScreen(3)">🔗 Match</button>
+        <button onclick="showScreen(4)">✅ Confirm</button>
+        <button onclick="showScreen(5)">🤝 Approve</button>
+        <button onclick="showScreen(6)">📍 Trip</button>
+      </nav>
+      <div class="user">
+        <span id="who"></span>
+        <button class="logout" onclick="logout()">Log out</button>
+      </div>
+    </aside>
+
+    <div class="content">
+      <div class="topbar">
+        <div>
+          <h1>Shared trip dashboard <span class="demo">Demo data</span></h1>
+          <p class="tag">Book, match, confirm and track shared trips.</p>
+        </div>
+      </div>
+      <div class="stats" id="stats"></div>
+      <main id="screen"></main>
+      <footer>All names, places and prices are fictional demo data.</footer>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
